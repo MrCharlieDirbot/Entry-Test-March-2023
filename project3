@@ -1,0 +1,29 @@
+# Function to get a list of integers from the user
+def get_integer_list(prompt):
+    user_input = input(prompt)
+    return [int(x) for x in user_input.split()]
+
+# Ask the user for the first list of integers
+list1 = get_integer_list("Enter the first list of integers separated by spaces: ")
+
+# Ask the user for the second list of integers
+list2 = get_integer_list("Enter the second list of integers separated by spaces: ")
+
+# Check that the lists have the same length
+if len(list1) != len(list2):
+    print("The two lists must have the same length. Please try again.")
+else:
+    # Merge the two lists
+    merged_list = list1 + list2
+    
+    # Sort the list in descending order
+    merged_list.sort(reverse=True)
+    
+    # Remove duplicates by converting the list to a set, then back to a list
+    unique_list = list(set(merged_list))
+    
+    # Sort the unique list in descending order again, in case converting to a set changed the order
+    unique_list.sort(reverse=True)
+    
+    # Print the final list
+    print("The final merged list is:", unique_list)
