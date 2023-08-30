@@ -1,0 +1,37 @@
+Project 2: String Management and Hash Maps
+
+
+# Ask the user for a sentence
+user_input = input("Please enter a sentence: ")
+
+# Convert the sentence to lowercase and split it into words
+words = user_input.lower().split()
+
+# Create an empty dictionary to store the word counts
+word_count = {}
+
+# Count the occurrences of each word
+for word in words:
+    if word in word_count:
+        word_count[word] += 1
+    else:
+        word_count[word] = 1
+
+# Sort the words alphabetically
+sorted_words = sorted(word_count.keys())
+
+# Print out each word and its count
+for word in sorted_words:
+    print(f"{word}: {word_count[word]}")
+
+    
+//Example Output for input of "The quick brown fox jumps over the lazy dog":
+
+brown: 1
+dog: 1
+fox: 1
+jumps: 1
+lazy: 1
+over: 1
+quick: 1
+the: 2
