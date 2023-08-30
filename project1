@@ -1,0 +1,16 @@
+# Ask the user for a number
+user_input = input("Please enter a number: ")
+
+# Convert the input to an integer
+n = int(user_input)
+
+# Print out all the even numbers from 0 up to n
+print("Even numbers from 0 to {}:".format(n))
+for i in range(0, n + 1, 2):
+    print(i)
+
+# Print out all the odd numbers from n back down to 0
+print("Odd numbers from {} back down to 0:".format(n))
+for i in range(n, -1, -1):
+    if i % 2 != 0:
+        print(i)
